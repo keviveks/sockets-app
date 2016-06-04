@@ -9,8 +9,9 @@ socket.on('message', function(message) {
 	console.log(message.text);
 
 	var $messages = jQuery('.messages');
+	var momentTimeStamp = moment.utc(message.timestamp);
 
-	$messages.append('<p>' + message.text + '</p>');
+	$messages.append('<p><strong>' + momentTimeStamp.local().format('h:mm a') + ': </strong>' + message.text + '</p>');
 });
 
 var $form = jQuery('#message-form');
