@@ -34,6 +34,8 @@ function sendCurrentUsers(socket) {
 	});
 }
 
+// private message function
+
 io.on('connection', function(socket) {
 	console.log('User connected in socket.io');
 
